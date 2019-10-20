@@ -11,30 +11,31 @@ namespace MyVet.Web.Data.Entities
         [Key]
         public int IdOwner { get; set; }
 
-        [Required]
-        [MaxLength(30)]
+        [Required(ErrorMessage = "The field {0} is mandatory.")]
+        [MaxLength(30, ErrorMessage = "The {0} field can not have more than {1} characters.")]
         public string Document { get; set; }
 
-        [Required]
-        [MaxLength(50)]
+        [Required(ErrorMessage = "The field {0} is mandatory.")]
+        [MaxLength(50, ErrorMessage = "The {0} field can not have more than {1} characters.")]
         [Display(Name = "Nombres")]
         public string FirstName { get; set; }
 
-        [Required]
-        [MaxLength(50)]
+        [Required(ErrorMessage = "The field {0} is mandatory.")]
+        [MaxLength(50, ErrorMessage = "The {0} field can not have more than {1} characters.")]
         [Display(Name = "Apellidos")]
         public string LastName { get; set; }
-        
-        [MaxLength(20)]
+
+
+        [MaxLength(20, ErrorMessage = "The {0} field can not have more than {1} characters.")]
         [Display(Name = "Linea Baja")]
         public string FixedPhone { get; set; }
 
-        [Required]
-        [MaxLength(20)]
+        [Required(ErrorMessage = "The field {0} is mandatory.")]
+        [MaxLength(20, ErrorMessage = "The {0} field can not have more than {1} characters.")]
         [Display(Name = "Celular")]
         public string CellPhone { get; set; }
 
-        [MaxLength(100)]
+        [MaxLength(100, ErrorMessage = "The {0} field can not have more than {1} characters.")]
         [Display(Name = "Domicilio")]
         public string Address { get; set; }
         [Display(Name = "Propietario")]

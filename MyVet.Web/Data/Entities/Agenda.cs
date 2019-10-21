@@ -6,32 +6,28 @@ using System.Threading.Tasks;
 
 namespace MyVet.Web.Data.Entities
 {
-    public class History
+    public class Agenda
     {
         public int Id { get; set; }
 
         [Required(ErrorMessage = "The field {0} is mandatory.")]
-        [MaxLength(100, ErrorMessage = "The {0} field can not have more than {1} characters.")]
-        [Display(Name = "Description")]
-        public string Description { get; set; }
-
-        [Required(ErrorMessage = "The field {0} is mandatory.")]
         [DataType(DataType.DateTime)]
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd H:mm tt}", ApplyFormatInEditMode = true)]
         [Display(Name = "Date")]
         public DateTime Date { get; set; }
 
         public string Remarks { get; set; }
 
+        [Display(Name = "Is Available?")]
+        public bool IsAvailable { get; set; }
+
         [Display(Name = "Date")]
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]       
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd H:mm tt}")]
         public DateTime DateLocal => Date.ToLocalTime();
 
-        public ServiceType ServiceType { get; set; }
+        public Owner Owner { get; set; }
 
         public Pet Pet { get; set; }
-
-
 
     }
 }

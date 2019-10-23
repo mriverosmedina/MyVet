@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MyVet.Web.Data;
 using System;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace MyVet.Web.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AgendaController : Controller
     {
         private readonly DataContext _context;

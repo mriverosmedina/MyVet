@@ -24,4 +24,11 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Managers\" />
+    <Folder Include="Views\ServiceTypes\" />
+    <Folder Include="Views\PetTypes\" />
+    <Folder Include="Views\Pets\" />
+  </ItemGroup>
+
 </Project>

@@ -29,6 +29,7 @@
     <Folder Include="Views\ServiceTypes\" />
     <Folder Include="Views\PetTypes\" />
     <Folder Include="Views\Pets\" />
+    <Folder Include="wwwroot\images\Pets\" />
   </ItemGroup>
 
 </Project>
